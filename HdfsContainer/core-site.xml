@@ -1,0 +1,17 @@
+<configuration>
+      <property>
+          <name>fs.defaultFS</name>
+          <value>hdfs://mycluster</value>
+      </property>
+
+        <property>
+                <name>dfs.replication</name>
+                <value>1</value>
+        </property>
+	
+	<property>
+                  <name>dfs.journalnode.edits.dir</name>
+                  <value>/home/hadoop/edits_dir</value>
+        </property>                                                                                                                                                             
+
+</configuration>

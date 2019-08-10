@@ -1,0 +1,68 @@
+<configuration>
+ <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+
+    <property>
+        <name>dfs.nameservices</name>
+        <value>mycluster</value>
+    </property>
+
+<property>
+     <name>dfs.client.failover.proxy.provider.mycluster</name>
+     <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.fencing.methods</name>
+    <value>sshfence(root:2122)</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.fencing.ssh.private-key-files</name>
+    <value>/root/.ssh/id_rsa</value>
+  </property>
+
+  <property>
+     <name>dfs.ha.namenodes.mycluster</name>
+     <value>4e629e0daab0,2a3de02bd388</value>
+  </property>
+
+   <property>
+      <name>dfs.namenode.name.dir</name>
+      <value>file:/home/hadoop/local_nn_dir</value>
+    </property>
+
+  <property>
+    <name>dfs.namenode.rpc-address.mycluster.4e629e0daab0</name>
+    <value>4e629e0daab0:8020</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.rpc-address.mycluster.2a3de02bd388</name>
+    <value>2a3de02bd388:8020</value>
+  </property>
+
+  <property>
+     <name>dfs.namenode.http-address.mycluster.4e629e0daab0</name>
+     <value>4e629e0daab0:50070</value>
+  </property>
+
+  <property>
+     <name>dfs.namenode.http-address.mycluster.2a3de02bd388</name>
+     <value>2a3de02bd388:50070</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.shared.edits.dir</name>
+    <value>file:///volume</value>
+  </property>
+
+<property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/home/hadoop/dn_dir</value>
+</property>
+
+
+</configuration>
